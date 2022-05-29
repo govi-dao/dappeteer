@@ -5,18 +5,18 @@ E2E testing for dApps using Puppeteer + MetaMask
 ## Installation
 
 ```
-$ npm install -s @chainsafe/dappeteer
-$ yarn add @chainsafe/dappeteer
+$ npm install -s @yovelsapir/dappeteer
+$ yarn add @yovelsapir/dappeteer
 ```
 
 ## Usage
 
 ```js
 import puppeteer from 'puppeteer';
-import dappeteer from '@chainsafe/dappeteer';
+import dappeteer from '@yovelsapir/dappeteer';
 
 async function main() {
-  const browser = await dappeteer.launch(puppeteer, { metamaskVersion: 'v10.8.1' });
+  const browser = await dappeteer.launch(puppeteer, { metamaskVersion: 'v10.14.0' });
   const metamask = await dappeteer.setupMetamask(browser);
 
   // you can change the network if you want
