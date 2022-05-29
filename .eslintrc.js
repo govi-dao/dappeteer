@@ -34,7 +34,6 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'off',
     'prefer-const': 'error',
     'no-consecutive-blank-lines': 0,
-    'no-console': 'error',
     '@typescript-eslint/naming-convention': [
       'error',
       { selector: 'default', format: ['camelCase'] },

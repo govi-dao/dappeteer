@@ -131,7 +131,7 @@ export async function setupMetamask(
 /**
  * Return MetaMask instance
  * */
-export async function getMetamaskWindow(browser: puppeteer.Browser, version?: string): Promise<Dappeteer> {
+export async function getMetamaskWindow(browser: puppeteer.Browser): Promise<Dappeteer> {
   const metamaskPage = await new Promise<puppeteer.Page>(resolve => {
     browser.pages().then(pages => {
       for (const page of pages) {
@@ -140,7 +140,7 @@ export async function getMetamaskWindow(browser: puppeteer.Browser, version?: st
     })
   })
 
-  return getMetamask(metamaskPage, version)
+  return getMetamask(metamaskPage)
 }
 
 async function closeHomeScreen(browser: puppeteer.Browser): Promise<puppeteer.Page> {

@@ -33,7 +33,7 @@ async function waitForGanache(): Promise<ganache.Provider> {
 
 async function deployContract(provider: ganache.Provider): Promise<{ address: string } | null> {
   console.log('Deploying test contract...')
-  const web3 = new Web3((provider as unknown) as Web3['currentProvider'])
+  const web3 = new Web3(provider as unknown as Web3['currentProvider'])
   const compiledContracts = compileContracts()
   const counterContractInfo = compiledContracts['Counter.sol']['Counter']
   const counterContractDef = new web3.eth.Contract(counterContractInfo.abi)

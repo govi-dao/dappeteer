@@ -17,30 +17,30 @@ import { unlock } from './unlock'
 export type SetSignedIn = (state: boolean) => Promise<void>
 export type GetSingedIn = () => Promise<boolean>
 
-export const getMetamask = async (page: Page, version?: string): Promise<Dappeteer> => {
+export const getMetamask = async (page: Page): Promise<Dappeteer> => {
   // modified window object to kep state between tests
   const setSignedIn = async (state: boolean): Promise<void> => {
     await page.evaluate((s: boolean) => {
-      ;((window as unknown) as { signedIn: boolean }).signedIn = s
+      ;(window as unknown as { signedIn: boolean }).signedIn = s
     }, state)
   }
   const getSingedIn = (): Promise<boolean> =>
     page.evaluate(() => {
-      return ((window as unknown) as { signedIn: boolean | undefined }).signedIn !== undefined
-        ? ((window as unknown) as { signedIn: boolean }).signedIn
+      return (window as unknown as { signedIn: boolean | undefined }).signedIn !== undefined
+        ? (window as unknown as { signedIn: boolean }).signedIn
         : true
     })
 
   return {
-    addNetwork: addNetwork(page, version),
-    approve: approve(page, false, version),
-    confirmTransaction: confirmTransaction(page, getSingedIn, version),
-    importPK: importPk(page, version),
-    lock: lock(page, setSignedIn, getSingedIn, version),
-    sign: sign(page, getSingedIn, version),
-    switchAccount: switchAccount(page, version),
-    switchNetwork: switchNetwork(page, version),
-    unlock: unlock(page, setSignedIn, getSingedIn, version),
+    addNetwork: addNetwork(page),
+    approve: approve(page, false),
+    confirmTransaction: confirmTransaction(page, getSingedIn),
+    importPK: importPk(page),
+    lock: lock(page, setSignedIn, getSingedIn),
+    sign: sign(page, getSingedIn),
+    switchAccount: switchAccount(page),
+    switchNetwork: switchNetwork(page),
+    unlock: unlock(page, setSignedIn, getSingedIn),
     addToken: addToken(page),
     getTokenBalance: getTokenBalance(page),
     page,
