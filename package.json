@@ -1,6 +1,6 @@
 {
   "name": "@yovelsapir/dappeteer",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "description": "E2E testing for dApps using Puppeteer + MetaMask",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -14,7 +14,8 @@
     "build": "tsc -p tsconfig.build.json",
     "lint": "eslint --color --ext .ts src/ test/",
     "lint:fix": "yarn run lint --fix",
-    "test": "mocha"
+    "test": "mocha",
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
