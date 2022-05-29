@@ -1,3 +1,4 @@
+/* eslint-disable */
 async function start() {
   let provider, signer, address, counterContract
 
@@ -46,7 +47,7 @@ async function start() {
       const signed = document.createElement('div')
       signed.id = 'signed'
       document.body.appendChild(signed)
-    } catch(error) {
+    } catch (error) {
       console.log(error)
     }
   })
