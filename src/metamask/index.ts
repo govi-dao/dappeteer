@@ -26,7 +26,6 @@ export const getMetamask = async (page: Page, version?: string): Promise<Dappete
   }
   const getSingedIn = (): Promise<boolean> =>
     page.evaluate(() => {
-      console.log(window)
       return ((window as unknown) as { signedIn: boolean | undefined }).signedIn !== undefined
         ? ((window as unknown) as { signedIn: boolean }).signedIn
         : true

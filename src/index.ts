@@ -91,13 +91,7 @@ export async function launch(puppeteerLib: typeof puppeteer, options: LaunchOpti
   return puppeteerLib.launch({
     headless: false,
     product: 'chrome',
-    args: [
-      `--disable-extensions-except=${METAMASK_PATH}`,
-      `--load-extension=${METAMASK_PATH}`,
-      `--log-level=3`,
-      '--auto-open-devtools-for-tabs',
-      ...(args || []),
-    ],
+    args: [`--disable-extensions-except=${METAMASK_PATH}`, `--load-extension=${METAMASK_PATH}`, ...(args || [])],
     ...rest,
   })
 }
