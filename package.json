@@ -1,5 +1,5 @@
 {
-  "name": "@yovelsapir/dappeteer",
+  "name": "@coti-cvi/dappeteer",
   "version": "2.5.3",
   "description": "E2E testing for dApps using Puppeteer + MetaMask",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yovelsapir/dappeteer.git"
+    "url": "https://github.com/govi-dao/dappeteer"
   },
   "keywords": [
     "e2e",
@@ -31,7 +31,8 @@
   ],
   "contributors": [
     "Juan Cazala <juan@decentraland.org>",
-    "ChainSafe <info@chainsafe.io>"
+    "ChainSafe <info@chainsafe.io>",
+    "Yovel Sapir <yovelsapir@gmail.com>"
   ],
   "license": "MIT",
   "dependencies": {
