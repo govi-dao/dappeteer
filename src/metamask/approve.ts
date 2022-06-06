@@ -15,9 +15,9 @@ export const approve = (page: Page, selectAll: boolean) => async (): Promise<voi
     console.log('Couldnt select all, maybe there is only one available.')
   }
 
-  const button = await page.waitForSelector('button.button.btn-primary', { timeout: 3000 })
+  const button = await page.waitForSelector('button.button.btn-primary')
   if (button) await button.click()
 
-  const connectButton = await page.waitForSelector('button.button.btn-primary', { timeout: 3000 })
+  const connectButton = await page.waitForSelector('button.button.btn-primary')
   if (connectButton) await connectButton.click()
 }
